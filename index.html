@@ -3,67 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Match Schedule - STW ESPORTS</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            width: 80%;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        h1 {
-            text-align: center;
-            color: #333;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-        th, td {
-            padding: 10px;
-            text-align: center;
-            border: 1px solid #ddd;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-        .empty {
-            color: #888;
-        }
-    </style>
+    <title>Match Schedule</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Match Schedule - STW ESPORTS</h1>
-        <table>
-            <thead>
-                <tr>
-                    <th>Date</th>
-                    <th>Match 1</th>
-                    <th>Match 2</th>
-                    <th>Match 3</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>18-02-2025</td>
-                    <td class="empty">-</td>
-                    <td class="empty">-</td>
-                    <td class="empty">-</td>
-                </tr>
-                
-        
-                <!-- Add more rows as needed -->
-            </tbody>
-        </table>
-    </div>
+    <h2>Match Timings</h2>
+    <input type="text" id="search" placeholder="Search Matches">
+    <table>
+        <thead>
+            <tr>
+                <th>IDP</th>
+                <th>Start Time</th>
+                <th>Date</th>
+                <th>Qualify</th>
+            </tr>
+        </thead>
+        <tbody id="match-list"></tbody>
+    </table>
+   
+    <script src="viewer.js" type="module"></script>
 </body>
 </html>
