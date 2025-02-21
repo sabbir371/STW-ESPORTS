@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="style.css">
+    <style type="text/css" media="all">
+      body {
+    font-family: Arial, sans-serif;
+    background-color: #1e1e2f;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+#admin-panel {
+    background: #252545;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 600px;
+    text-align: center;
+}
+
+h2, h4 {
+    color: #ffcc00;
+}
+
+input, select, button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+input, select {
+    background: #33334d;
+    color: #ffffff;
+}
+
+button {
+    background: #ffcc00;
+    color: #1e1e2f;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #ffaa00;
+}
+
+select[multiple] {
+    height: 100px;
+}
+
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+    background: #33334d;
+}
+
+thead th {
+    background: #ffcc00;
+    color: #1e1e2f;
+    padding: 10px;
+}
+
+td, th {
+    border: 1px solid #444466;
+    padding: 10px;
+}
+
+td {
+    background: #252545;
+    color: #ffffff;
+}
+
+#matchResult {
+    background: #33334d;
+    padding: 10px;
+    cursor: pointer;
+}
+
+    </style>
+</head>
+<body>
+    <div id="password-container">
+        <input type="password" id="password-input" placeholder="Enter Password">
+        <button id="unlock-btn">Unlock</button>
+    </div>
+
+    <div id="admin-panel" style="display: none;">
+        <h2>Manage Matches</h2>
+        <input type="text" id="idp" placeholder="IDP">
+        <input type="text" id="start-time">
+        <input type="text" id="qualify" placeholder="Qualify">
+        <input type="text" id="info" placeholder="MATCH INFORMATION "> <!-- Stores Base64 String -->
+        <h4>Select Maps:</h4>
+        <select id="map-select" multiple>
+            <option value="Bermuda">Bermuda</option>
+            <option value="Purgatory">Purgatory</option>
+            <option value="Kalahari">Kalahari</option>
+            <option value="Alpine">Alpine</option>
+            <option value="Nexterra">Nexterra</option>
+        </select>
+
+        
+        <h4>Upload Match Result:</h4>
+        <input type="file" id="matchResult">
+
+        <input type="hidden" id="matchResultBase64"> <!-- Stores Base64 String -->
+        <button id="add-match-btn">Add Match</button>
+
+
+        <table>
+            <thead>
+                <tr>
+                    <th>IDP</th>
+                    <th>START</th>
+                    <th>Maps</th>
+                    <th>Qualify</th>
+                    <th>Result</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="match-list"></tbody>
+        </table>
+    </div>
+
+    <script type="module" src="admin.js"></script>
+</body>
+</html>

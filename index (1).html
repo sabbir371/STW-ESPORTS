@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Match Schedule</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+    body {
+    font-family: Arial, sans-serif;
+    background-color: #1e1e2f;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 10px;
+}
+
+h2 {
+    color: #ffcc00;
+    margin-bottom: 15px;
+}
+
+#search {
+    width: 90%;
+    max-width: 400px;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 5px;
+    background: #33334d;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+table {
+    width: 90%;
+    max-width: 800px;
+    border-collapse: collapse;
+    background: #33334d;
+    border-radius: 7px;
+    overflow: hidden;
+}
+
+thead th {
+    background: #ffcc00;
+    color: #1e1e2f;
+    padding: 12px;
+}
+
+td, th {
+    border: 1px solid #444466;
+    padding: 12px;
+    text-align: center;
+}
+
+td {
+    background: #252545;
+    color: #ffffff;
+}
+
+tr:hover td {
+    background: #3a3a5c;
+}
+</style>
+</head>
+<body>
+    <h2>Match Timings</h2>
+    <input type="text" id="search" placeholder="Search Matches">
+    <table>
+        <thead>
+            <tr>
+                <th>IDP</th>
+                <th>Start Time</th>
+                <th>Maps</th>
+                <th>Qualify</th>
+                <th>Details</th>
+            </tr>
+        </thead>
+        <tbody id="match-list"></tbody>
+    </table>
+
+    <script type="module" src="viewer.js"></script>
+    <script>
+      function download(a){
+        
+    const dataUrl = a.src;
+        fetch(dataUrl)
+  .then(res => res.blob())
+  .then(blob => {
+    const link = document.createElement("a");
+    link.href = URL.createObjectURL(blob);
+    link.download = "photo.jpg"; // Set file name
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  })
+  .catch(error => console.error("Error downloading image:", error));
+      }
+    </script>
+   
+
+</body>
+</html>
