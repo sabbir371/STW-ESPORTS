@@ -21,7 +21,7 @@ console.log(storage)
 // Unlock Admin Panel
 document.getElementById("unlock-btn").addEventListener("click", () => {
     const passwordInput = document.getElementById("password-input").value;
-    if (passwordInput === "") {
+    if (passwordInput === "fuso") {
         document.getElementById("password-container").style.display = "none";
         document.getElementById("admin-panel").style.display = "block";
     } else {
