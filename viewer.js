@@ -52,7 +52,7 @@ onValue(matchesRef, (snapshot) => {
                     <p><strong>IDP:</strong> ${match.idp}</p>
                     <p><strong>START:</strong> ${match.startTime}</p>
                     <p><strong>MAPS:</strong> ${match.maps.join(", ")}</p>
-                    <p><strong>INFO:</strong>${match.info || "no info"}</p>
+                    <p><strong>INFO:</strong> ${match.info || "no info"}</p>
                     <p><strong>QUALIFY:</strong> TOP ${match.qualify}</p>
                    
                     ${match.resultImage ? `<img onclick="download(this)" src="data:image/jpeg;base64,${match.resultImage}" style="max-width:75vw;">` : "Result Not Published"}
